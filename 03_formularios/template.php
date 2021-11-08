@@ -50,6 +50,9 @@
                   <th>Prazo</th>
                   <th>Prioridade</th>
                   <th>Concluída</th>
+                  <th>Coluna</th>
+                  <th>ColunaB</th>
+                  <th>ColunaC</th>
                 </tr>";
           
           foreach ($arrListaTarefa as $tarefa)
