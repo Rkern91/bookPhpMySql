@@ -3,6 +3,8 @@
   {
     
     echo "<tr>
+                  <th>Nome</th>
+                  <th>Dt. Nascimento</th>
                   <th>Tarefas</th>
                   <th>Descricao</th>
                   <th>Prazo</th>
@@ -13,6 +15,8 @@
     foreach ($arrListaTarefa as $tarefa)
       echo "<tr>
                     <td>{$tarefa["nome"]}</td>
+                    <td style='text-align: center'>{$tarefa["data"]}</td>
+                    <td>{$tarefa["tarefa"]}</td>
                     <td>{$tarefa["descricao"]}</td>
                     <td style='text-align: center'>{$tarefa["prazo"]}</td>
                     <td style='text-align: center'>{$tarefa["prioridade"]}</td>

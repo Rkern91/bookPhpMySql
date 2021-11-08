@@ -10,8 +10,16 @@
       <fieldset>
         <legend>Nova tarefa</legend>
         <label>
-          Tarefa:
+          Nome:
           <input type="text" name="nome" required/>
+        </label>
+        <label>
+          Dt. Nascimento:
+          <input type="date" name="data" required/>
+        </label>
+        <label>
+          Tarefa:
+          <input type="text" name="tarefa" required/>
         </label>
         <label>
           Descrição (Opcional):
@@ -24,17 +32,19 @@
         <fieldset>
           <legend>Prioridade:</legend>
           <label>
-            <input type="radio" name="prioridade" value="baixa" checked />
+            <input type="radio" name="prioridade" value="Baixa" checked />
             Baixa
-            <input type="radio" name="prioridade" value="media" />
+            <input type="radio" name="prioridade" value="Media" />
             Média
-            <input type="radio" name="prioridade" value="alta" />
+            <input type="radio" name="prioridade" value="Alta" />
             Alta
           </label>
         </fieldset>
         <label>
           Tarefa concluída:
-          <input type="checkbox" name="concluida" value="sim" />
+          <input type="radio" name="concluida" value="0" /> Não
+          <input type="radio" name="concluida" value="1" /> Sim
+          <input type="radio" name="concluida" value="2" checked/> Em Andamento
         </label>
         <input type="submit" value="Cadastrar" />
       </fieldset>

@@ -17,8 +17,11 @@
     
     if (!$idExisteTarefa)
     {
-      $arrListaTarefa["nome"] = $_GET["nome"];
-  
+      $dataFormatado            = new DateTime($_GET["data"]);
+      $arrListaTarefa["nome"]   = $_GET["nome"];
+      $arrListaTarefa["data"]   = $dataFormatado->format("d/m/Y");
+      $arrListaTarefa["tarefa"] = $_GET["tarefa"];
+
       if (isset($_GET["descricao"]))
         $arrListaTarefa["descricao"] = $_GET["descricao"];
       else
@@ -31,11 +34,19 @@
   
       $arrListaTarefa["prioridade"] = $_GET["prioridade"];
   
-      if (isset($_GET["concluida"]))
-        $arrListaTarefa["concluida"] = $_GET["concluida"];
-      else
-        $arrListaTarefa["concluida"] = "Não";
-  
+      switch ($_GET["concluida"])
+      {
+        CASE 0:
+          $arrListaTarefa["concluida"] = "Não";
+        break;
+        CASE 1:
+          $arrListaTarefa["concluida"] = "Sim";
+        break;
+        CASE 2:
+          $arrListaTarefa["concluida"] = "Em Andamento";
+        break;
+      }
+      
       $_SESSION["arrListaTarefas"][] = $arrListaTarefa;
     }
   }
