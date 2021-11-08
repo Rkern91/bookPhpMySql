@@ -6,27 +6,38 @@
   if (isset($_GET["nome"]) && $_GET["nome"] != "")
   {
     $arrListaTarefa = [];
+    $idExisteTarefa = false;
     
-    $arrListaTarefa["nome"] = $_GET["nome"];
+    if (isset($_SESSION["arrListaTarefas"]))
+    {
+      foreach ($_SESSION["arrListaTarefas"] as $itemTarefa)
+        if ($_GET["nome"] == $itemTarefa["nome"])
+          $idExisteTarefa = true;
+    }
     
-    if (isset($_GET["descricao"]))
-      $arrListaTarefa["descricao"] = $_GET["descricao"];
-    else
-      $arrListaTarefa["descricao"] = "";
+    if (!$idExisteTarefa)
+    {
+      $arrListaTarefa["nome"] = $_GET["nome"];
   
-    if (isset($_GET["prazo"]))
-      $arrListaTarefa["prazo"] = $_GET["prazo"];
-    else
-      $arrListaTarefa["prazo"] = "";
-    
-    $arrListaTarefa["prioridade"] = $_GET["prioridade"];
+      if (isset($_GET["descricao"]))
+        $arrListaTarefa["descricao"] = $_GET["descricao"];
+      else
+        $arrListaTarefa["descricao"] = "";
   
-    if (isset($_GET["concluida"]))
-      $arrListaTarefa["concluida"] = $_GET["concluida"];
-    else
-      $arrListaTarefa["concluida"] = "Não";
-    
-    $_SESSION["arrListaTarefas"][] = $arrListaTarefa;
+      if (isset($_GET["prazo"]))
+        $arrListaTarefa["prazo"] = $_GET["prazo"];
+      else
+        $arrListaTarefa["prazo"] = "";
+  
+      $arrListaTarefa["prioridade"] = $_GET["prioridade"];
+  
+      if (isset($_GET["concluida"]))
+        $arrListaTarefa["concluida"] = $_GET["concluida"];
+      else
+        $arrListaTarefa["concluida"] = "Não";
+  
+      $_SESSION["arrListaTarefas"][] = $arrListaTarefa;
+    }
   }
   
   if (array_key_exists("arrListaTarefas", $_SESSION))

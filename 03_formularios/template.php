@@ -40,28 +40,6 @@
       </fieldset>
     </form>
     <table>
-      <?php
-        if (isset($arrListaTarefa))
-        {
-          
-          echo "<tr>
-                  <th>Tarefas</th>
-                  <th>Descricao</th>
-                  <th>Prazo</th>
-                  <th>Prioridade</th>
-                  <th>Concluída</th>
-                </tr>";
-          
-          foreach ($arrListaTarefa as $tarefa)
-            echo "<tr>
-                    <td>{$tarefa["nome"]}</td>
-                    <td>{$tarefa["descricao"]}</td>
-                    <td>{$tarefa["prazo"]}</td>
-                    <td>{$tarefa["prioridade"]}</td>
-                    <td>{$tarefa["concluida"]}</td>
-                  </tr>";
-        }
-      ?>
-    </table>
-  </body>
-</html>
+<?php
+  include("sel_lista_tarefas.php");
+?>
