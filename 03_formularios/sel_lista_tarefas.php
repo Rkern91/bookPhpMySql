@@ -3,14 +3,14 @@
   {
     
     echo "<tr>
-                  <th>Nome</th>
-                  <th>Dt. Nascimento</th>
-                  <th>Tarefas</th>
-                  <th>Descricao</th>
-                  <th>Prazo</th>
-                  <th>Prioridade</th>
-                  <th>Concluída</th>
-                </tr>";
+            <th>Nome</th>
+            <th>Dt. Nascimento</th>
+            <th>Tarefas</th>
+            <th>Descricao</th>
+            <th>Prazo</th>
+            <th>Prioridade</th>
+            <th>Concluída</th>
+          </tr>";
     
     foreach ($arrListaTarefa as $tarefa)
     {
